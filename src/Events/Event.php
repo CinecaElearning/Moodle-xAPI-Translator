@@ -16,6 +16,7 @@ class Event extends PhpObj {
         $app_name = $opts['app']->fullname ?: 'A Moodle site';
         return [[
             'user_id' => $opts['user']->id,
+            'user_email' => $opts['user']->email,
             'user_url' => $opts['user']->url,
             'user_name' => $opts['user']->username,
             'context_lang' => $opts['course']->lang,
