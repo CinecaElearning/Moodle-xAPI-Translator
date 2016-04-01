@@ -1,6 +1,6 @@
 <?php namespace MXTranslator\Events;
 
-class CourseCompleted extends Event {
+class CourseCompleted extends CourseViewed {
     /**
      * Reads data for an event.
      * @param [String => Mixed] $opts
@@ -10,12 +10,6 @@ class CourseCompleted extends Event {
     public function read(array $opts) {
         return [array_merge(parent::read($opts)[0], [
             'recipe' => 'course_completed',
-            'course_url' => $opts['course']->url,
-            'course_name' => $opts['course']->fullname ?: 'A Moodle course',
-            'course_description' => strip_tags($opts['course']->summary) ?: 'A Moodle course',
-            'course_type' => static::$xapi_type.$opts['course']->type,
-            'course_ext' => $opts['course'],
-            'course_ext_key' => 'http://lrs.learninglocker.net/define/extensions/moodle_course',
         ])];
     }
 }

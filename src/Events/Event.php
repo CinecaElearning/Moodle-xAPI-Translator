@@ -30,6 +30,7 @@ class Event extends PhpObj {
             'app_description' => strip_tags($opts['app']->summary) ?: $app_name,
             'app_type' => 'http://id.tincanapi.com/activitytype/site',
             'app_ext' => $opts['app'],
+            'sendmbox' => $opts['sendmbox'],
             'app_ext_key' => 'http://lrs.learninglocker.net/define/extensions/moodle_course',
             'source_url' => 'http://moodle.org',
             'source_name' => 'Moodle',
